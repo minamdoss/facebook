@@ -2,7 +2,5 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/Chatbot" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/cloudtunes" vcs="Git" />
   </component>
 </project>

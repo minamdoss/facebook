@@ -1,8 +1,3 @@
-#Python libraries that we need to import for our bot
-import random
-from flask import Flask, request
-from pymessenger.bot import Bot
-import pyodbc as db
 import io
 import json
 import re
@@ -14,64 +9,6 @@ from snips_nlu.default_configs import CONFIG_EN
 
 from DBConnection import Database
 from DB_Interaction import interaction
-
-import os
-
-app = Flask(__name__)
-ACCESS_TOKEN = 'EAAGGGCVi2rcBALuP2tFhFnyWbu10RF7CHWpFwfvfyeZC1hfzpR1N9ZAShQqgeqDPZCGFk1o3POMCnDtVXaByFJlV46K1TT1saiuGel70cpeqPTbpIF033DQgSPoozDA9zjZARZAJ9CbUfXrXFeHIKZCmroNKfAtFDCcKZBmcGh0UwZDZD'
-VERIFY_TOKEN = 'VERIFY_TOKEN'
-bot = Bot(ACCESS_TOKEN)
-
-# dbconn = db.connect("Driver={SQL SERVER};Server=tcp:madyfa.database.windows.net,1433;Database=CBT;User Id={mohamed};Password={3Oss199755};Encrypt=True;Trusted_Connection=yes;")
-# dbconn = db.connect("Driver={ODBC Driver 13 for SQL Server};Server=tcp:madyfa.database.windows.net,1433;Database=CBT;Uid=mohamed@madyfa;Pwd={3Oss199755};Encrypt=yes;TrustServerCertificate=no;Connection Timeout=30;")
-
-#We will receive messages that Facebook sends our bot at this endpoint
-@app.route("/", methods=['GET', 'POST'])
-def receive_message():
-    if request.method == 'GET':
-        """Before allowing people to message your bot, Facebook has implemented a verify token
-        that confirms all requests that your bot receives came from Facebook."""
-        token_sent = request.args.get("hub.verify_token")
-        return verify_fb_token(token_sent)
-    #if the request was not get, it must be POST and we can just proceed with sending a message back to user
-    else:
-        # get whatever message a user sent the bot
-       output = request.get_json()
-       for event in output['entry']:
-          messaging = event['messaging']
-          for message in messaging:
-            if message.get('message'):
-                #Facebook Messenger ID for user so we know where to send response back to
-                recipient_id = message['sender']['id']
-                if message['message'].get('text'):
-                    response_sent_text = get_message()
-                    nlu.setQuery(message['message'].get('text'),recipient_id)
-                #if user sends us a GIF, photo,video, or any other non-text item
-                if message['message'].get('attachments'):
-                    response_sent_nontext = get_message()
-                    send_message(recipient_id, response_sent_nontext)
-    return "Message Processed"
-
-
-def verify_fb_token(token_sent):
-    #take token sent by facebook and verify it matches the verify token you sent
-    #if they match, allow the request, else return an error
-    if token_sent == VERIFY_TOKEN:
-        return request.args.get("hub.challenge")
-    return 'Invalid verification token'
-
-
-#chooses a random message to send to the user
-def get_message():
-    sample_responses = ["You are stunning!", "We're proud of you.", "Keep on being you!", "We're greatful to know you :)"]
-    # return selected item to the user
-    return random.choice(sample_responses)
-
-#uses PyMessenger to send response to user
-def send_message(recipient_id, response):
-    #sends user the text message provided via input response parameter
-    bot.send_text_message(recipient_id, response)
-    return "success"
 
 class NLU:
     __connection = Database()
@@ -186,7 +123,7 @@ class NLU:
 
         :return: Answer
         """
-
+        
 
         if self.checkIntent():
             # if str(self.CheckJsonEntities()).__contains__("Has No Entities"):
@@ -194,8 +131,8 @@ class NLU:
             # else:
                 self.return_original()
         else:
-            send_message(self.UserID,"not available due to intent")
-            # print('ChatBot : not available due to intent')
+
+            print('ChatBot : not available due to intent')
 
     def checkSlots(self):
         self.__nluSlots = self._getSlots()
@@ -242,8 +179,7 @@ class NLU:
                 chatbotques = "Please Enter "+slots_missing[i]
                 # g = Translator().translate(chatbotques , dest = self.language).text
                 # print("Chatbot: ",g)
-                send_message(self.UserID,chatbotques)
-                # print ("Chatbot : ",chatbotques)
+                print ("Chatbot : ",chatbotques)
                 if slots_missing[i] == "ID":
                     try:
                         reply = int(input("User: "))
@@ -252,11 +188,10 @@ class NLU:
                         continue
                 else:
                     values=[]
-                    # print("Chatbot: Possible Values for", slots_missing[i], "are:")
+                    print("Chatbot: Possible Values for", slots_missing[i], "are:")
                     for k in range(len(self.__dataset['entities'][slots_missing[i]]['data'])):
                             values.append(self.__dataset['entities'][slots_missing[i]]['data'][k]['value'])
-                    # print(values)
-                    send_message(self.UserID , values)
+                    print(values)
                     reply = input("User: ")
 
                 if reply == 'q':
@@ -281,8 +216,7 @@ class NLU:
         slots_needed = self.askForunenteredEntities()
         if slots_needed is None:
             self.__interaction.UnAnsweredFactory().__noIntent_insert__(self._query)
-            send_message(self.UserID , "I don't have answer for this")
-            # print("ChatBot : I don't have answer for this")
+            print("ChatBot : I don't have answer for this")
             return
 
         key_list = list(slots_needed.keys())
@@ -305,8 +239,8 @@ class NLU:
                         # print(self.__dataset['entities'][key_list[key]]["data"][i]["value"])
             except:
                 print("Error")
-        send_message(self.UserID , "Done")
-        # print("Values to get from Database" , self.__nluSlots)  # original values of entities used in question
+
+        print("Values to get from Database" , self.__nluSlots)  # original values of entities used in question
         # return List or dictionary??
 
 
@@ -327,7 +261,3 @@ class NLU:
     #      else:
     #          return "Has Entities"
 
-if __name__ == "__main__":
-    nlu = NLU()
-    nlu.EngineMode("Train")
-    app.run()
