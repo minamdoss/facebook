@@ -48,9 +48,9 @@ def receive_message():
                     nlu.setQuery(message['message'].get('text'),recipient_id)
                 #if user sends us a GIF, photo,video, or any other non-text item
                 if message['message'].get('attachments'):
-                    response_sent_nontext = get_message()
-                    send_message(recipient_id, response_sent_nontext)
-                    # nlu.setQuery(message['message'].get('attachments'),recipient_id)
+                    # response_sent_nontext = get_message()
+                    # send_message(recipient_id, response_sent_nontext)
+                    nlu.setQuery(message['message'].get('attachments'),recipient_id)
     return "Message Processed"
 
 
@@ -63,10 +63,10 @@ def verify_fb_token(token_sent):
 
 
 #chooses a random message to send to the user
-def get_message():
-    sample_responses = ["You are stunning!", "We're proud of you.", "Keep on being you!", "We're greatful to know you :)"]
-    # return selected item to the user
-    return random.choice(sample_responses)
+# def get_message():
+#     sample_responses = ["You are stunning!", "We're proud of you.", "Keep on being you!", "We're greatful to know you :)"]
+#     # return selected item to the user
+#     return random.choice(sample_responses)
 
 #uses PyMessenger to send response to user
 def send_message(recipient_id, response):
