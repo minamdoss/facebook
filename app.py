@@ -329,6 +329,6 @@ class NLU:
     #          return "Has Entities"
 
 if __name__ == "__main__":
+    app.run()
     nlu = NLU()
     nlu.EngineMode("Train")
-    app.run()
