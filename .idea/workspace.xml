@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="95cdc99b-7f24-4c99-af17-42000f7c4327" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime.txt" beforeDir="false" afterPath="$PROJECT_DIR$/runtime.txt" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -15,14 +17,37 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="200">
-              <caret line="66" column="52" selection-start-line="66" selection-start-column="52" selection-end-line="66" selection-end-column="52" />
+            <state relative-caret-position="952">
+              <caret line="62" lean-forward="true" selection-start-line="62" selection-end-line="62" />
               <folding>
                 <element signature="e#53#66#0" expanded="true" />
                 <element signature="e#3107#12556#0" />
               </folding>
             </state>
           </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/runtime.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="10" selection-start-column="10" selection-end-column="10" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Procfile">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="19" selection-start-column="19" selection-end-column="19" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
@@ -33,8 +58,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/NLU_Engine.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret selection-end-line="10" selection-end-column="38" />
+            <state relative-caret-position="221">
+              <caret line="262" lean-forward="true" selection-start-line="262" selection-end-line="262" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
                 <element signature="e#304#9719#0" />
@@ -58,8 +83,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/requirements.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="114" column="16" selection-start-line="114" selection-end-line="114" selection-end-column="16" />
+            <state relative-caret-position="108">
+              <caret line="12" column="19" selection-start-line="12" selection-start-column="19" selection-end-line="12" selection-end-column="19" />
             </state>
           </provider>
         </entry>
@@ -69,6 +94,8 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>Werkzeug==0.15.4</find>
+      <find>cur</find>
+      <find>setuptools</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -77,10 +104,11 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/requirements.txt" />
         <option value="$PROJECT_DIR$/ChatBot.py" />
         <option value="$PROJECT_DIR$/NLU_Engine.py" />
         <option value="$PROJECT_DIR$/app.py" />
+        <option value="$PROJECT_DIR$/runtime.txt" />
+        <option value="$PROJECT_DIR$/requirements.txt" />
       </list>
     </option>
   </component>
@@ -159,17 +187,18 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.3286385" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3286385" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info active="true" anchor="bottom" id="Version Control" order="7" visible="true" weight="0.3286385" />
+      <window_info anchor="bottom" id="Version Control" order="7" weight="0.3286385" />
       <window_info anchor="bottom" id="Educational.CheckDetails" order="8" />
       <window_info anchor="bottom" id="Terminal" order="9" weight="0.3286385" />
       <window_info anchor="bottom" id="Python Console" order="10" />
@@ -181,7 +210,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Adding Chatbot" />
     <MESSAGE value="Update app" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update app" />
+    <MESSAGE value="Update runtime.txt" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update runtime.txt" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/Dataset.yaml" />
@@ -207,8 +237,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/NLU_Engine.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="10" selection-end-column="38" />
+        <state relative-caret-position="221">
+          <caret line="262" lean-forward="true" selection-start-line="262" selection-end-line="262" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
             <element signature="e#304#9719#0" />
@@ -216,17 +246,34 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Procfile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="19" selection-start-column="19" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/runtime.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="10" selection-start-column="10" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/requirements.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="114" column="16" selection-start-line="114" selection-end-line="114" selection-end-column="16" />
+        <state relative-caret-position="108">
+          <caret line="12" column="19" selection-start-line="12" selection-start-column="19" selection-end-line="12" selection-end-column="19" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="66" column="52" selection-start-line="66" selection-start-column="52" selection-end-line="66" selection-end-column="52" />
+        <state relative-caret-position="952">
+          <caret line="62" lean-forward="true" selection-start-line="62" selection-end-line="62" />
           <folding>
             <element signature="e#53#66#0" expanded="true" />
             <element signature="e#3107#12556#0" />
