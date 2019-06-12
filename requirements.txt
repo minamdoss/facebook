@@ -87,15 +87,7 @@ six==1.12.0
 sklearn==0.0
 sklearn-crfsuite==0.3.6
 snips-nlu==0.18.0
-snips-nlu-de==0.2.1
 snips-nlu-en==0.2.1
-snips-nlu-es==0.2.1
-snips-nlu-fr==0.2.2
-snips-nlu-it==0.1.1
-snips-nlu-ja==0.2.1
-snips-nlu-ko==0.2.0
-snips-nlu-musictrack-en==0.2.0
-snips-nlu-musictrack-fr==0.2.0
 snips-nlu-ontology==0.62.0
 snips-nlu-utils==0.7.0
 tabulate==0.8.2
