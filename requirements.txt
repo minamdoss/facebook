@@ -11,7 +11,7 @@ Click==7.0
 cloudpickle==1.1.1
 colorama==0.4.0
 cryptography==2.4.2
-curses==2.2
+curses==2.2.0
 cycler==0.10.0
 decorator==4.4.0
 deprecation==2.0.6
