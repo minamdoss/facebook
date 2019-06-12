@@ -101,4 +101,4 @@ virtualenv-clone==0.4.0
 wcwidth==0.1.7
 Werkzeug==0.15.4
 wrapt==1.10.11
-tensorflow==1.12.0
+snips-nlu-ontology==0.62.0
